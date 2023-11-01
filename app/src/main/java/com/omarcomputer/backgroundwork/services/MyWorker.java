@@ -11,31 +11,21 @@ public class MyWorker extends Worker {
     private static final String TAG = "FileReadWork";
     private Context context;
     private WorkerParameters workerParameters;
+    private int i=0;
+
 
     public MyWorker(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);
         this.context = context;
         this.workerParameters = workerParams;
+
+
     }
 
     @NonNull
     @Override
     public Result doWork() {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                for(int i= 0 ;i<=100;i++){
-                    Log.i("MyWorker","i : "+i);
-                    try {
-                        Thread.sleep(2000);
-                    } catch (InterruptedException e) {
-                        throw new RuntimeException(e);
-                    }
-                }
-            }
-        }
-
-        );
+            Log.i("MyWorker", "Work done");
         return Result.success();
     }
 
