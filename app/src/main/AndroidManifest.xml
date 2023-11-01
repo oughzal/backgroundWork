@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BackgroundWork"
         tools:targetApi="31">
+        <service android:name=".services.MyIntentService" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
